@@ -2,3 +2,166 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root {
+  --bg-image: url(/images/cover-image-dark.png);
+  --bg-color: #04062b;
+  --text-color: #f1b2ce;;
+  --accent-color: #ff0070;
+  --title-decor-color: #000028;
+  --header-title-color: #db00ff;
+  --page-title-color: #ff0070;
+  --header-title-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --page-gap: 10px;
+  --button-border-hover: rgba(255, 0, 112, 0.4);
+}
+
+@media (width >= 768px) {
+  :root {
+    --header-title-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem); 
+    --page-gap: 20px;
+  }
+
+  .header {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .decorated-zone::after{
+  margin-bottom: var(--page-gap);
+  margin-left: var(--page-gap);
+}
+
+.decorated-zone::before {
+
+  margin-top: var(--page-gap);
+  margin-right: var(--page-gap);
+}
+
+.header__decorated-element {
+margin-right: 29px;
+margin-top: var(--page-gap);
+align-self: flex-start;
+}
+
+.header__theme-menu {
+  grid-column: 2 / 3;
+}
+
+.header__title {
+  grid-column: 1 / 3;
+}
+
+.header__text {
+  grid-column: 2 / 3;
+}
+
+
+  .content__section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .content__section:nth-child(2n) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gallery {
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    'first first second'
+    'third fourth second'
+    'third fifth fifth';
+  }
+
+  .image-first {
+    grid-area: first;
+  }
+
+  .image-second {
+    grid-area: second;
+  }
+
+  .image-third {
+    grid-area: third;
+  }
+
+  .image-fourth {
+    grid-area: fourth;
+  }
+  
+  .image-fifth {
+    grid-area: fifth;
+  }
+
+}
+
+
+@media (min-width: 1024px){
+  :root {
+    --header-title-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    --page-gap: 20px;
+  }
+
+  .header__theme-menu {
+    align-self: start;
+    justify-self: center;
+    grid-column: 1 / 3;
+
+  }
+
+  .header__theme-menu-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .content__section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .content__section:nth-child(2n) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content__section-cards.coulumn-article {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--page-gap);
+    align-items: baseline;
+  }
+
+  
+
+  .gallery {
+    gap: var(--page-gap);
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-areas:
+    'first first second'
+    'third fourth second'
+    'third fifth fifth';
+  }
+
+  .image-first {
+    grid-area: first;
+  }
+
+  .image-second {
+    grid-area: second;
+  }
+
+  .image-third {
+    grid-area: third;
+  }
+
+  .image-fourth {
+    grid-area: fourth;
+  }
+  
+  .image-fifth {
+    grid-area: fifth;
+  }
+
+
+}
